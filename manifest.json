@@ -1,0 +1,31 @@
+{
+    "manifest_version": 3,
+    "name": "CSFloat Enhancer",
+    "version": "1.0.0",
+    "description": "Extra filters and quality-of-life improvements for CSFloat.",
+    "permissions": ["storage"],
+    "host_permissions": ["https://csfloat.com/*"],
+    "content_scripts": [
+      {
+        "matches": ["https://csfloat.com/*"],
+        "js": [
+    "content.js",
+    "src/constants.js",
+    "src/storage.js",
+    "src/ui.js",
+    "src/filters.js",
+    "src/cards.js",
+    "src/observer.js",
+    "src/app.js"
+],
+        "css": ["content.css"],
+        "run_at": "document_idle"
+      }
+    ],
+    "web_accessible_resources": [
+      {
+        "resources": ["src/*.js"],
+        "matches": ["https://csfloat.com/*"]
+      }
+    ]
+  }
